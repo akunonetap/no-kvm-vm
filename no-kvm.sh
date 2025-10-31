@@ -14,7 +14,8 @@ cat << "EOF"
  |  __  | |  | |  ___/ | | |   \ | | |_ |  _ <| |  | |\   /   / /  
  | |  | | |__| | |    _| |_| |\  | |__| | |_) | |__| | | |   / /__ 
  |_|  |_|\____/|_|   |_____|_| \_|\_____|____/ \____/  |_|  /_____|
-                                                                  
+
+                        MODIFY BY FAI                                             
               POWERED BY HOPINGBOYZ (No-KVM Edition)
 ================================================
 EOF
@@ -36,6 +37,9 @@ cd "$VM_DIR"
 # =============================
 # VM Image Setup
 # =============================
+
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager cloud-image-utils
+
 if [ ! -f "$IMG_FILE" ]; then
     echo "[INFO] VM image not found, creating new VM..."
     wget -q https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img -O "$IMG_FILE"
